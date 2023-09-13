@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  //Works up to 10 integers
+  int x = 12345;
+  cout << "Inital: " << x << endl;
+  string newX = to_string(x);
+  int final;
+  string reverseX;
+  bool neg = true;
+  int count;
+
+  //Check to see if has negative
+  if(newX[0] == '-')
+  {
+    neg = true;
+  }
+  else
+  {
+    neg = false;
+  }
+  int i = 0;
+
+  //Get length
+  while(newX[i+1] != NULL)
+    {
+      i++;
+    }
+  cout << i << endl;
+  //Cut off negative if neg is true
+  if(neg == true)
+  {
+    count = 1;
+  }
+  else
+  {
+    count = 0;
+  }
+
+  //Flip and transfer to new variable
+  while(i >= count)
+    {
+      reverseX = reverseX + newX[i];
+      i--;
+    }
+
+  //Convert to int
+  int intReverseX = stoi(reverseX);
+  
+  //Flip to negative if neg is true
+  if(neg == true)
+  {
+    final = intReverseX - (2*intReverseX);
+  }
+  else
+  {
+    final = intReverseX;
+  }
+  cout << "Final: " << final << endl;
+
+}
+
+
+
